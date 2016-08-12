@@ -14,16 +14,18 @@ Carlos Palacios Macedo
         <content src="index.html" />
         <access origin="*" />
 
-
+ <icon src="icon.png" />
+ 
 <preference name="Fullscreen" value="true" />
+  <preference name="orientation" value="default" />
+  <preference name="fullscreen" value="true" />
 
-<platform name="android">
-    <preference name="Orientation" value="sensorLandscape" />
-</platform>
-
-<platform name="ios">
-    <preference name="Orientation" value="all" />
-</platform>
+  <platform name="android">
+    <preference name="Fullscreen" value="true" />
+  </platform>
+  <platform name="ios">
+    <preference name="Fullscreen" value="false" />
+  </platform>
 
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
