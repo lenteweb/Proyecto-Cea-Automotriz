@@ -12,7 +12,7 @@ Taller Mecánico Cea Automotriz en Ecatepec, Servicio a Domicilio
 Carlos Palacios Macedo
 </autor>
         <content src="index.html" />
-
+        <access origin="*" />
 
  <icon src="icon.png" />
  <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="themes/images/screen-ldpi-portrait.png" />
