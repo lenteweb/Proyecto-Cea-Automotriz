@@ -15,21 +15,20 @@ Carlos Palacios Macedo
         <access origin="*" />
 
  <icon src="icon.png" />
+ <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="themes/images/screen-ldpi-portrait.png" />
  
-<preference name="Fullscreen" value="true" />
-  <preference name="orientation" value="default" />
-  <preference name="fullscreen" value="true" />
-
+  <hook type="after_plugin_install" src="scripts/install_plugins.js" />
+  
   <platform name="android">
     <preference name="Fullscreen" value="true" />
+	  <preference name="orientation" value="portait" />
   </platform>
   <platform name="ios">
     <preference name="Fullscreen" value="false" />
+	  <preference name="orientation" value="default" />
   </platform>
 
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -43,25 +42,22 @@ Carlos Palacios Macedo
     <!--
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
+		
     -->
 	
-	<plugin name="cordova-plugin-battery-status" />
-    <plugin name="cordova-plugin-camera" />
-    <plugin name="cordova-plugin-media-capture" />
-    <plugin name="cordova-plugin-console" />
-    <plugin name="cordova-plugin-contacts" />
-    <plugin name="cordova-plugin-device" />
-    <plugin name="cordova-plugin-device-motion" />
-    <plugin name="cordova-plugin-device-orientation" />
-    <plugin name="cordova-plugin-dialogs" />
-    <plugin name="cordova-plugin-file" />
-    <plugin name="cordova-plugin-file-transfer" />
-    <plugin name="cordova-plugin-geolocation" />
-    <plugin name="cordova-plugin-globalization" />
-    <plugin name="cordova-plugin-inappbrowser" />
-    <plugin name="cordova-plugin-media" />
-    <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-splashscreen" />
-    <plugin name="cordova-plugin-vibration" />
+	<plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2" source="pgb" />
+	<plugin name="net.yoik.cordova.plugins.screenorientation" spec="1.3.1" source="pgb" />
+	<plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
+	<plugin name="com.simonmacdonald.telephonenumber" spec="1.0.0" source="pgb" />
+	<plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+	<plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
+	<plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb" />
+	<plugin name="com.badrit.backbutton" spec="0.1.0" source="pgb" />
+	<plugin name="com.badrit.emailcomposer" spec="0.1.0" source="pgb" />
+	<plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" spec="0.1.1" source="pgb" />
+    <plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />
+	<plugin name="uk.co.ilee.nativetransitions" spec="0.1.4" source="pgb" />
+	<plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+
 	
 </widget>	
