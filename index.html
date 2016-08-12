@@ -1,0 +1,229 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CEA Automotriz APP</title>
+	<link rel="stylesheet" href="themes/cea.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"
+    ></script>
+    <script> 
+	 /*
+ * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
+ * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
+ */
+$( document ).on( "pageinit", "#map-page", function() {
+    var defaultLatLng = new google.maps.LatLng(19.5481890, -99.0195100);  // Default to Hollywood, CA when no geolocation support
+    if ( navigator.geolocation ) {
+        function success(pos) {
+            // Location found, show map with these coordinates
+            drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+        }
+        function fail(error) {
+            drawMap(defaultLatLng);  // Failed to find location, show default map
+        }
+        // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+        navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+    } else {
+        drawMap(defaultLatLng);  // No geolocation support, show default map
+    }
+    function drawMap(latlng) {
+        var myOptions = {
+            zoom: 14,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // Add an overlay to the map of current lat/lng
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "Greetings!"
+        });
+    }
+});
+</script>
+<script>
+$( document ).on( "click", ".show-page-loading-msg", function() {
+    var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+})
+.on( "click", ".hide-page-loading-msg", function() {
+    $.mobile.loading( "hide" );
+});
+</script>
+<script>
+imagenes = new Array();
+//Agrega tantas imágenes como necesites en el array
+imagenes[0] = "slide1.png";
+imagenes[1] = "slide2.png";
+siguiente = 0;
+
+function CambiaImagen()
+{
+dimensiones = $("#box-imagen").width();
+$("#box-imagen img").css({left: -dimensiones+"px"}).attr("src", imagenes[siguiente]);
+$("#box-imagen img").animate({left: "+="+dimensiones});
+$("#box-imagen a").attr("href", imagenes[siguiente]);
+
+siguiente = siguiente+1;
+if (siguiente >= imagenes.length)
+{
+siguiente = 0;
+}
+//Aquí puedes colocar el tiempo para cada transición de imagen
+transicion = 4000;
+setTimeout("CambiaImagen()", transicion);
+}
+
+$(function(){
+CambiaImagen();
+});
+</script>
+<style>
+
+#box
+{
+width: 100%;
+background: black;
+padding: 0px;
+border-radius: 4px;
+}
+
+#box-imagen{
+width: 100%;
+background: black;
+overflow: hidden;
+}
+
+#box-imagen img
+{
+position: relative;
+width: 100%;
+
+}
+</style>
+</head>
+<body>
+<!--Pagina de Inicio -->
+	<div data-role="page" id="page1" data-theme="a">
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner">
+		<a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="CEA_AUTOMOTRIZ.jpg" width="100%" height="" alt=""/></h1>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:5533719175"> Llámanos </a>
+<div data-role="navbar" data-position="fixed">
+    <ul>
+      <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-active">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-left" data-transition="slide">Servicios</a></li>
+      <li><a href="#page3" class="ui-btn ui-icon-location ui-btn-icon-left" data-transition="slide">Contacto</a></li>
+    </ul>
+  </div>
+	</div>
+		<div data-role="content" data-theme="a">
+<!--¡Servicio y Reparación<br>CEA ATOMOTRIZ-->
+<div id="box">
+<div id="box-imagen">
+<a href="slide1.png"><img src="slide1.png"></a>
+</div>
+</div>
+</div>
+        <div data-role="footer"></div>
+	</div>
+<!--Pagina Servicios -->
+    <div data-role="page" id="page2" data-theme="a">
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner">
+		<a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="CEA_AUTOMOTRIZ.jpg" width="100%" height="" alt=""/></h1>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:5533719175"> Llámanos </a>
+   <div data-role="navbar" data-position="fixed">
+    <ul>
+      <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-left" data-transition="slide">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-left ui-btn-active">Servicios</a></li>
+      <li><a href="#page3" class="ui-btn ui-icon-location ui-btn-icon-left" data-transition="slide">Contacto</a></li>
+    </ul>
+  </div>      
+	</div>
+<div data-role="content" data-theme="a">
+<h3 align="center">Tu auto como Nuevo</h3>
+<img src="cea_automotriz_reparación_de_autos.jpg" width="100%" height="100%" alt=""/>
+<p class="servicio">Afinaciones menores.<br>
++ Afinaciones mayores.<br>
++ Cambio de aceite<br>
++ Servicio de frenos.<br>
++ Servicio de sistema de enfriamiento.<br>
++ Servicio de banda de distribución.<br>
++ Transmisiones automáticas.<br>
++ Scaneo por computadora.<br>
++ Amortiguadores, Alineación y Balanceo.<br>
++ Venta de autopartes originales y usadas sobre pedido.</p>
+
+ </div>
+        <div data-role="footer"></div>
+	</div>
+
+ <!--Pagina Contacto -->
+        <div data-role="page" id="page3" data-theme="a">
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner">
+		<a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="CEA_AUTOMOTRIZ.jpg" width="100%" height="" alt=""/></h1>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:5533719175"> Llámanos </a>
+   <div data-role="navbar" data-position="fixed">
+    <ul>
+      <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top" data-transition="pop">Servicios</a></li>
+      <li><a href="#page3" class="ui-btn ui-icon-location ui-btn-icon-top ui-btn-active">Contacto</a></li>
+    </ul>
+  </div>      
+	</div>
+		<div data-role="content" data-theme="a">
+<h2 align="center">Visítanos</h2>
+<p>CALLE SECCION 42 MZ. 81 LT. 8 COL. RIO DE LUZ, ECATEPEC, EDO DE MEX, C.P 55100</p>
+
+<p>Horarios de lunes a viernes 8:00 – 18:30<br>
+Sábados 8:00 16:00hrs<br>
+Domingos y días festivos 10:00 – 14:00</p>
+
+<h3>Agenda cita y vamos a tu domicilio!!!</h3>
+<p class="normal">Si despu&eacute;s de ver esta web, tienes alg&uacute;n comentario o <strong>quieres agendar una cita</strong></p>
+
+   <ul data-role="listview" data-inset="true" style="text-align:center">
+   <li><a href ="mailto:contacto@ceaautomotriz.com" data-role="button"> Envía Email</a></li>
+   </ul>
+   <ul data-role="listview" data-inset="true" style="text-align:center">
+   <li><a href ="sms:5533719175" data-role="button"> Envía Mensaje SMS</a></li>
+   </ul>
+   <ul data-role="listview" data-inset="true" style="text-align:center">
+   <li><a href="#map-page" data-role="button" style="align-content:center">Ubicación</a></li>
+   </ul>
+
+</div>
+    <div data-role="footer"></div>
+	</div>
+    
+ <!-- pagina maps... -->   
+    <div data-role="page" id="map-page" data-url="map-page">
+    <div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
+		<a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-back  ui-btn-icon-notext ui-shadow" title=" Regresar " data-form="ui-icon" href="#page3"> Regresar </a>
+        <a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn  ui-shadow" title=" Llámanos " data-form="ui-icon" href="https://goo.gl/maps/GBqVAkUDAkq"> Como llego </a>
+        <h1>Ubicación</h1>
+        </div>
+    <div role="main" class="ui-content" id="map-canvas">
+        <!-- map loads here... -->
+    </div>
+	<!--Subelo a phonegap -->
+</div>
+</body>
+</html>

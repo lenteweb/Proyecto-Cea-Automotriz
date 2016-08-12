@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns = "http://wwww.w3.org/ns/widgets"
+id = "com.ceaautomotriz"
+version = "1.0.0">
+
+<name>CEA Automotriz APP</name>
+
+<description>
+Aplicacion Simple Cea Automotriz
+</description>
+
+<autor href="http://unaweb.net" email="webmaster@unaweb.net">
+Carlos Palacios Macedo
+</autor>
+
+</widget>
