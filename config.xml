@@ -17,7 +17,6 @@ Carlos Palacios Macedo
  <icon src="icon.png" />
  <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="themes/images/screen-ldpi-portrait.png" />
  
-  <hook type="after_plugin_install" src="scripts/install_plugins.js" />
   
   <platform name="android">
     <preference name="Fullscreen" value="true" />
