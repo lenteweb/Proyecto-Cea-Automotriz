@@ -43,20 +43,7 @@ Carlos Palacios Macedo
         <preference name="phonegap-version"       value="3.5.0" />
 		
     -->
-	
-	<plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2" source="pgb" />
-	<plugin name="net.yoik.cordova.plugins.screenorientation" spec="1.3.1" source="pgb" />
-	<plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />
-	<plugin name="com.simonmacdonald.telephonenumber" spec="1.0.0" source="pgb" />
-	<plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
-	<plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
-	<plugin name="fi.avaus.cordova.geolocation" spec="0.3.11" source="pgb" />
-	<plugin name="com.badrit.backbutton" spec="0.1.0" source="pgb" />
-	<plugin name="com.badrit.emailcomposer" spec="0.1.0" source="pgb" />
-	<plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" spec="0.1.1" source="pgb" />
-    <plugin name="it.adacto.cordova.device" spec="0.1" source="pgb" />
-	<plugin name="uk.co.ilee.nativetransitions" spec="0.1.4" source="pgb" />
-	<plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+
 
 	
 </widget>	
