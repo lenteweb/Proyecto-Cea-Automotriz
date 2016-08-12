@@ -15,13 +15,14 @@ Carlos Palacios Macedo
         <access origin="*" />
 
  <icon src="icon.png" />
- <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="themes/images/screen-ldpi-portrait.png" />
- 
-  
+   
   <platform name="android">
     <preference name="Fullscreen" value="true" />
 	  <preference name="orientation" value="portait" />
   </platform>
+  
+      <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+
 
 
    <!--
