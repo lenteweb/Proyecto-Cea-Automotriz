@@ -25,9 +25,6 @@ Carlos Palacios Macedo
 	  <preference name="DisallowOverscroll" value="true"/>
 	  <preference name="phonegap-version" value="cli-6.3.0" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
    <!--
         Define a specific version of PhoneGap to build into your app.
