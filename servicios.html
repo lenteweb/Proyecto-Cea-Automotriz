@@ -27,82 +27,38 @@ $( document ).on( "click", ".show-page-loading-msg", function() {
     $.mobile.loading( "hide" );
 });
 </script>
-<script>
-imagenes = new Array();
-//Agrega tantas imágenes como necesites en el array
-imagenes[0] = "slide1.png";
-imagenes[1] = "slide2.png";
-siguiente = 0;
-
-function CambiaImagen()
-{
-dimensiones = $("#box-imagen").width();
-$("#box-imagen img").css({left: -dimensiones+"px"}).attr("src", imagenes[siguiente]);
-$("#box-imagen img").animate({left: "+="+dimensiones});
-$("#box-imagen a").attr("href", imagenes[siguiente]);
-
-siguiente = siguiente+1;
-if (siguiente >= imagenes.length)
-{
-siguiente = 0;
-}
-//Aquí puedes colocar el tiempo para cada transición de imagen
-transicion = 4000;
-setTimeout("CambiaImagen()", transicion);
-}
-
-$(function(){
-CambiaImagen();
-});
-</script>
-<style>
-
-#box
-{
-width: 100%;
-background: black;
-padding: 0px;
-border-radius: 4px;
-}
-
-#box-imagen{
-width: 100%;
-background: black;
-overflow: hidden;
-}
-
-#box-imagen img
-{
-position: relative;
-width: 100%;
-
-}
-</style>
 </head>
 <body>
-<!--Pagina de Inicio -->
-	<div data-role="page" id="page1" data-theme="a">
+
+<!--Pagina Servicios -->
+    <div data-role="page" id="page2" data-theme="a">
 		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
 		<a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
 		<h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="CEA_AUTOMOTRIZ.jpg" width="100%" height="" alt=""/></h1>
 		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:5533719175"> Llámanos </a>
 <div class="ui-grid-b" data-theme="a">
-  	<div align="center" class="ui-block-a ui-responsive"><a data-theme="a" data-theme="a" href="#page1" class="ui-btn ui-icon-home ui-btn-icon-left ui-btn-active">INICIO</a></div>
-  	<div align="center" class="ui-block-b ui-responsive"><a data-theme="a" href="servicios.html" class="ui-btn ui-icon-navigation ui-btn-icon-left ">SERVICIOS</a></div>
+  	<div align="center" class="ui-block-a ui-responsive"><a data-theme="a" data-theme="a" href="#page1" class="ui-btn ui-icon-home ui-btn-icon-left">INICIO</a></div>
+  	<div align="center" class="ui-block-b ui-responsive"><a data-theme="a" href="servicios.html" class="ui-btn ui-icon-navigation ui-btn-icon-left ui-btn-active">SERVICIOS</a></div>
   	<div align="center" class="ui-block-c ui-responsive"><a data-theme="a" href="contacto.html" class="ui-btn ui-icon-location ui-btn-icon-left ">CONTACTO</a></div>
+	</div>      
 	</div>
-</div>  
-		<div data-role="content" data-theme="a">
-<!--¡Servicio y Reparación<br>CEA ATOMOTRIZ-->
-<div id="box">
-<div id="box-imagen">
-<a href="slide1.png"><img src="slide1.png" style= height="800"></a>
-</div>
-</div>
-</div>
+<div data-role="content" data-theme="a">
+<h3 align="center">Tu auto como Nuevo</h3>
+<img src="cea_automotriz_reparacion_de_autos.jpg" width="100%" height="" alt=""/>
+<p class="servicio">Afinaciones menores.<br>
++ Afinaciones mayores.<br>
++ Cambio de aceite<br>
++ Servicio de frenos.<br>
++ Servicio de sistema de enfriamiento.<br>
++ Servicio de banda de distribución.<br>
++ Transmisiones automáticas.<br>
++ Scaneo por computadora.<br>
++ Amortiguadores, Alineación y Balanceo.<br>
++ Venta de autopartes originales y usadas sobre pedido.</p>
+
+ </div>
         <div data-role="footer" data-position="fixed" data-id="pie_fijo"></div>
 	</div>
- 
 </div>
 </body>
 </html>
