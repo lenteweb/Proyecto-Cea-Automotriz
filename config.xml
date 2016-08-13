@@ -18,7 +18,7 @@ Carlos Palacios Macedo
    
   <platform name="android">
     <preference name="Fullscreen" value="true" />
-	  <preference name="orientation" value="portait" />
+	<preference name="orientation" value="landscape" />
   </platform>
   
       <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
