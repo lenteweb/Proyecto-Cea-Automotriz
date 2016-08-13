@@ -13,6 +13,8 @@ Carlos Palacios Macedo
 </autor>
         <content src="index.html" />
         <access origin="*" />
+		
+ <hook type="after_plugin_install" src="scripts/install_plugins.js" />
 
  <icon src="icon.png" />
    
@@ -24,6 +26,11 @@ Carlos Palacios Macedo
       <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 	  <preference name="DisallowOverscroll" value="true"/>
 	  <preference name="phonegap-version" value="cli-6.3.0" />
+	  
+	<plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-geolocation" />
 
 
    <!--
