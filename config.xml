@@ -11,9 +11,7 @@ Taller Mecánico Cea Automotriz en Ecatepec, Servicio a Domicilio
 <autor href="http://unaweb.net" email="webmaster@unaweb.net">
 Carlos Palacios Macedo
 </autor>
-        <content src="index.html" />
-        <access origin="*" />
-		
+
  <hook type="after_plugin_install" src="scripts/install_plugins.js" />
 
  <icon src="icon.png" />
@@ -31,6 +29,16 @@ Carlos Palacios Macedo
     <plugin name="cordova-plugin-device-motion" />
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
+	
+	<access origin="*" />
+	
+	<plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
 
 
    <!--
