@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns = "http://wwww.w3.org/ns/widgets"
 id = "com.ceaautomotriz.CeaAutomotrizEcatepec" 
-		android-versionCode = "1"
-		versionName = "1.0.0"
-		ios-CFBundleVersion="1.0.0">
+		android-versionCode = "2"
+		versionName = "1.1.0"
+		ios-CFBundleVersion="1.1.0">
 
 <name>CEA Automotriz Ecatepec</name>
 
